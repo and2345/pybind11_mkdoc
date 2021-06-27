@@ -5,7 +5,7 @@ on:
   push:
     branches: 
       - master
-      - windows_support
+      - windows_support_test
     tags:
     - 'v*'
 
