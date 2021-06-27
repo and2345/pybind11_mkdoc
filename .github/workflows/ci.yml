@@ -34,11 +34,11 @@ jobs:
 
     - name: Test package
       run: python -m pytest --forked
-      if: runner.os != "Windows"
+      if: runner.os != 'Windows'
 
     - name: Test package on Windows
       run: python -m pytest
-      if: runner.os == "Windows"
+      if: runner.os == 'Windows'
 
   dist:
     runs-on: ubuntu-latest
