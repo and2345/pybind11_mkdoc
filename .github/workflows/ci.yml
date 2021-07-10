@@ -37,8 +37,7 @@ jobs:
       if: runner.os != 'Windows'
 
     - name: Test package on Windows
-      run:
-        - python -m pytest -n2
+      run: python -m pytest -n2
       if: runner.os == 'Windows'
 
   dist:
