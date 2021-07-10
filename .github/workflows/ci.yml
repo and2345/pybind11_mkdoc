@@ -38,7 +38,7 @@ jobs:
 
     - name: Test package on Windows
       run: |
-        echo "LIBCLANG_PATH=C:\msys64\mingw64\bin\libclang.dll" >> $GITHUB_ENV
+        echo "::add-path::C:\msys64\mingw64\bin"
         python -m pytest -n2
       if: runner.os == 'Windows'
 
