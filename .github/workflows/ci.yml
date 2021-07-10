@@ -38,7 +38,7 @@ jobs:
 
     - name: Test package on Windows
       run: |
-        echo "::add-path::C:\msys64\mingw64\bin"
+        dir "C:\msys64\mingw64\bin"
         python -m pytest -n2
       if: runner.os == 'Windows'
 
