@@ -22,7 +22,6 @@ jobs:
         runs-on:
         - ubuntu-latest
         - macos-latest
-        - windows-latest
     runs-on: ${{ matrix.runs-on }}
     name: Test • 🐍 ${{ matrix.python-version }} • ${{matrix.runs-on}}
     steps:
@@ -36,13 +35,6 @@ jobs:
 
     - name: Test package
       run: python -m pytest --forked
-      if: runner.os != 'Windows'
-
-    - name: Test package on Windows
-      env:
-        LIBCLANG_PATH: C:\msys64\mingw64\bin\libclang.dll
-      run: python -m pytest -n2
-      if: runner.os == 'Windows' && (matrix.python-version == '3.8' || matrix.python-version == '3.9')
       
   checks_windows:
     strategy:
